@@ -79,6 +79,17 @@ namespace _20160513_autenticacao.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        /////////////////////////////////////////////////
+        /// adicionar os campos específicos do utilizador
+        /////////////////////////////////////////////////
+        [Required] 
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        public string NomeProprio { get; set; }
+        [Required]
+        [StringLength(20, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        public string Apelido { get; set; }
+        public string NIF { get; set; }
     }
 
     public class ResetPasswordViewModel
